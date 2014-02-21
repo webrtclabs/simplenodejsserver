@@ -1,0 +1,145 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Simplenodejsserver</title>
+  <meta name="description" content="simple node.js server using express module">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Simplenodejsserver</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">simple node.js server using express module</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/webrtclabs/simplenodejsserver/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/webrtclabs/simplenodejsserver/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/webrtclabs/simplenodejsserver" class="code">View Simplenodejsserver on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>
+<a name="simplenodejsserver" class="anchor" href="#simplenodejsserver"><span class="octicon octicon-link"></span></a>simplenodejsserver</h1>
+
+<p>assuming you have node installed</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>installation</h2>
+
+<p>1.Download node <a href="http://nodejs.org/">http://nodejs.org/</a>
+2.install express</p>
+
+<pre lang="command"><code>npm install express
+</code></pre>
+
+<p>3.create server.js</p>
+
+<pre lang="server.js"><code>
+
+ var express = require("express");
+ var app = express();
+
+ /* serves main page */
+ app.get("/", function(req, res) {
+    res.sendfile('index.html')
+ });
+
+  app.post("/user/add", function(req, res) { 
+    /* some server side logic */
+    res.send("OK");
+  });
+
+ /* serves all the static files */
+ app.get(/^(.+)$/, function(req, res){ 
+     console.log('static file request : ' + req.params);
+     res.sendfile( __dirname + req.params[0]); 
+ });
+
+ var port = process.env.PORT || 5000;
+ app.listen(port, function() {
+   console.log("Listening on " + port);
+ });
+
+
+</code></pre>
+
+<p>4.create html page as i used index.html</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;title&gt;</span>
+simple node js server by webrtclabs by quickstreamingmedia
+<span class="nt">&lt;/title&gt;</span>
+
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+done:P
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+
+</pre></div>
+
+<p>5.run the server</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">node</span> <span class="nx">server</span><span class="p">.</span><span class="nx">js</span>
+
+</pre></div>
+
+<p>6.done
+:P</p>
+
+<h3>
+<a name="running-directly" class="anchor" href="#running-directly"><span class="octicon octicon-link"></span></a>running directly</h3>
+
+<p>1.install node
+2.download master.zip
+3.got odirectory where these files placed
+4.run server.js</p>
+
+<p>MIT licence 2014 by quickstreamingmedia</p>
+
+<h3>
+<a name="follow-on-twitter" class="anchor" href="#follow-on-twitter"><span class="octicon octicon-link"></span></a>follow on twitter</h3>
+
+<p><a href="https://twitter.com/webrtclabs">https://twitter.com/webrtclabs</a></p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/webrtclabs" class="avatar"><img src="https://2.gravatar.com/avatar/a484478b76a8f399c52904ed85696a5c?d=https%3A%2F%2Fidenticons.github.com%2F9ab84ecd8345fe81792bccfd8c5f0995.png&amp;r=x&amp;s=60" width="48" height="48"/></a> <a href="https://github.com/webrtclabs">webrtclabs</a> maintains <a href="https://github.com/webrtclabs/simplenodejsserver">Simplenodejsserver</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="http://pages.github.com/">GitHub Pages</a><br/>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/webrtclabs/simplenodejsserver/tarball/master" class="tar">tar</a><a href="https://github.com/webrtclabs/simplenodejsserver/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
